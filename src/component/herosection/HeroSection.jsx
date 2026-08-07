@@ -49,7 +49,7 @@ const HeroSection = () => {
 
   const mainImg = [
     "/imagesss/WMNS+AIR+JORDAN+1+ELEVATE+LOW.png",
-    "/imagesss/AIR+JORDAN+1+LOW+PRM (3).png"
+    
   ]
 
   useEffect(()=>{
@@ -287,7 +287,7 @@ const HeroSection = () => {
               style={{ x: shoeShiftX, y: shoeShiftY }}
               animate={{ y: [0, -18, 0], rotate: [-3, 3, -3] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              src="/imagesss/AIR+JORDAN+1+LOW+PRM.png"
+              src="/imagess/W+AIR+JORDAN+1+LOW+SE (1)_no_bg.png"
               alt="Featured sneaker"
               className="relative w-full h-full object-contain drop-shadow-[0_40px_60px_rgba(0,0,0,0.65)]"
             />
