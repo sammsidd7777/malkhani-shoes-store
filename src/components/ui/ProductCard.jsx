@@ -14,7 +14,7 @@ const ProductCard = ({
   isWishcard,
   removeWish,
 }) => {
-  const image = item.productImg?.[0] ? productImg(item.productImg[0]) : "/imagesss/air.jpg";
+  const image = item.productImg?.[0];
 
 
 
