@@ -7,19 +7,12 @@ const LoginPage = () => {
 
   async function isUserLoggedIn(){
       let response = await fetch(`${import.meta.env.VITE_BACK_URL}/user/current`, {credentials: "include"})
-      if(response.ok) setIsLoggedIn(true)
-      
-   
-
-      
-  }
-
-
-
+      if(response.ok) setIsLoggedIn(true);  
+  };
 
   useEffect(()=>{
     isUserLoggedIn()
-  }, [])
+  }, []);
 
   return (
     <div>
