@@ -277,7 +277,7 @@ const HeroSection = () => {
                 x: { duration: 0.8, delay: 0.3 },
                 y: { duration: 7, repeat: Infinity, ease: "easeInOut" },
               }}
-              src="/imagesss/WMNS+AIR+JORDAN+1+ELEVATE+LOW.png"
+              src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/d/ad22b92Nike-II1259-002_8.jpg?rnd=20200526195200&tr=w-1080"
               alt=""
               className="absolute -right-6 bottom-2 w-1/2 object-contain drop-shadow-2xl blur-[1px] saturate-50"
             />
@@ -287,7 +287,7 @@ const HeroSection = () => {
               style={{ x: shoeShiftX, y: shoeShiftY }}
               animate={{ y: [0, -18, 0], rotate: [-3, 3, -3] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              src="/imagess/W+AIR+JORDAN+1+LOW+SE (1)_no_bg.png"
+              src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/d/0/d08605bNike-IO9932-001_1.jpg?rnd=20200526195200&tr=w-1080"
               alt="Featured sneaker"
               className="relative w-full h-full object-contain drop-shadow-[0_40px_60px_rgba(0,0,0,0.65)]"
             />
