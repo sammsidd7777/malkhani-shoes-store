@@ -5,4 +5,4 @@
 export const API_BASE = `${import.meta.env.VITE_BACK_URL}`;
 export const IMG_BASE = `${API_BASE}/images`;
 
-export const productImg = (fileName) => `${IMG_BASE}/${fileName}`;
+export const productImg = (fileName) => `${fileName}`;
