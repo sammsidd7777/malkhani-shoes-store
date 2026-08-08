@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, Sparkles, Star, ShieldCheck, TrendingUp, MousePointer2 } from "lucide-react";
@@ -21,6 +21,9 @@ const particles = Array.from({ length: 14 }).map((_, i) => ({
 }));
 
 const HeroSection = () => {
+
+const [count,setCount]=useState(0);
+const [nextCount,setnextCount]=useState(1);
 
   const stageRef = useRef(null);
 
@@ -48,13 +51,25 @@ const HeroSection = () => {
 
 
   const mainImg = [
-    "/imagesss/WMNS+AIR+JORDAN+1+ELEVATE+LOW.png",
-    
-  ]
+  "/imagess/heroimg1.avif",
+  "/imagess/heroimg2.avif",
+  "/imagess/heroimg3.avif",
+  "/imagess/heroimg4.avif",
+  "/imagess/heroimg5.avif",
+  "/imagess/heroimg6.avif",
+  "/imagess/heroimg7.avif", 
+  ];
 
-  useEffect(()=>{
 
-  },[])
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCount((prev) => (prev + 1) % mainImg.length);
+    setNextCount((prev) => (prev + 1) % mainImg.length);
+   
+
+  return () => clearInterval(interval);
+}, []);
 
   return (
     <section className="relative overflow-hidden bg-ink-950">
@@ -277,7 +292,7 @@ const HeroSection = () => {
                 x: { duration: 0.8, delay: 0.3 },
                 y: { duration: 7, repeat: Infinity, ease: "easeInOut" },
               }}
-              src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/d/ad22b92Nike-II1259-002_8.jpg?rnd=20200526195200&tr=w-1080"
+              src={mainImg[count]}
               alt=""
               className="absolute -right-6 bottom-2 w-1/2 object-contain drop-shadow-2xl blur-[1px] saturate-50"
             />
@@ -287,8 +302,7 @@ const HeroSection = () => {
               style={{ x: shoeShiftX, y: shoeShiftY }}
               animate={{ y: [0, -18, 0], rotate: [-3, 3, -3] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/d/0/d08605bNike-IO9932-001_1.jpg?rnd=20200526195200&tr=w-1080"
-              alt="Featured sneaker"
+              src= {mainImg[nextCount]} alt="Featured sneaker"
               className="relative w-full h-full object-contain drop-shadow-[0_40px_60px_rgba(0,0,0,0.65)]"
             />
 
