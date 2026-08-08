@@ -304,7 +304,6 @@ const nextCount = (count + 1) % mainImg.length;
 
             {/* Main shoe — follows cursor slightly, floats, tilts */}
            <motion.img
-  key={count}
   style={{ x: shoeShiftX, y: shoeShiftY }}
   initial={{ opacity: 0 }}
   animate={{
