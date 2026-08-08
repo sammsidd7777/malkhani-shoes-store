@@ -9,8 +9,8 @@ import CTABanner from "../../component/CTABanner";
 
 const Homepage = () => {
   const [bestSellers, setBestSellers] = useState([]);
-  const [popular, setpopular] = useState([]);
-  const [trending, settrending] = useState([]);
+  const [popular, setPopular] = useState([]);
+  const [trending, setTrending] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const fatch = async () => {
@@ -18,21 +18,21 @@ const Homepage = () => {
       setLoading(true);
       const response = await fetch(`${import.meta.env.VITE_BACK_URL}/products/home`);
 
-      console.log(response,"responce")
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      console.log(data,"dataHome")
-      setBestSellers(data.message.bestSeller);
-      setpopulart(data.message.popular);
-      settrending(data.message.trending);
+       setPopular(data.message?.popular);
+      setBestSellers(data.message?.bestSeller);
+      setTrending(data.message?.trending);
     } catch (error) {
       console.log("response not come form backend", error);
     } finally {
       setLoading(false);
     }
   };
+
+
 
   useEffect(() => {
     fatch();
