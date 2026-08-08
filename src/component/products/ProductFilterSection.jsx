@@ -14,8 +14,8 @@ const tabs = [
 
 const ProductFilterSection = ({
   bestSellers,
-  bigDiscount,
-  newArrivals,
+  popular,
+  trending,
   handleAddToWish,
   handleAddToCart,
   loading = false,
@@ -23,7 +23,7 @@ const ProductFilterSection = ({
   const [activeFilter, setActiveFilter] = useState("best");
 
   const products =
-    activeFilter === "best" ? bestSellers : activeFilter === "discount" ? bigDiscount : newArrivals;
+    activeFilter === "best" ? bestSellers : activeFilter === "discount" ? popular : trending;
 
   return (
     <section className="py-16 sm:py-24 bg-ink-950">

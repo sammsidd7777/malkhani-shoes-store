@@ -9,8 +9,8 @@ import CTABanner from "../../component/CTABanner";
 
 const Homepage = () => {
   const [bestSellers, setBestSellers] = useState([]);
-  const [bigDiscount, setBigDiscount] = useState([]);
-  const [newArrivals, setNewArrivals] = useState([]);
+  const [popular, setpopular] = useState([]);
+  const [trending, settrending] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const fatch = async () => {
@@ -23,9 +23,9 @@ const Homepage = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      setBestSellers(data.message.fontdata.bestSellers);
-      setBigDiscount(data.message.fontdata.bigDiscount);
-      setNewArrivals(data.message.fontdata.newArrivals);
+      setBestSellers(data.message.bestSeller);
+      setpopulart(data.message.popular);
+      settrending(data.message.trending);
     } catch (error) {
       console.log("response not come form backend", error);
     } finally {
