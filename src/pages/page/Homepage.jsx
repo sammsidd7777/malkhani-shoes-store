@@ -17,6 +17,8 @@ const Homepage = () => {
     try {
       setLoading(true);
       const response = await fetch(`${import.meta.env.VITE_BACK_URL}/products/all`);
+
+      console.log(response,"responce")
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
