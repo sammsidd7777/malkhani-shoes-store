@@ -45,7 +45,7 @@ const ShopPage = () => {
       setLoading(true);
       const response = await fetch(`${import.meta.env.VITE_BACK_URL}/products/all`);
       const data = await response.json();
-      const productData = data.message.fontdata.product;
+      const productData = data?.message?.products || [];
       setProducts(productData);
       setFilteredProducts(productData);
     } catch (error) {

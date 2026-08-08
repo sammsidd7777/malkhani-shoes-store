@@ -22,10 +22,7 @@ const ProductFilterSection = ({
 }) => {
   const [activeFilter, setActiveFilter] = useState("bestSellers");
 
-  console.log(  bestSellers,
-  popular,
-  trending,
- )
+
 
   const products = activeFilter === "bestSellers" ? bestSellers : activeFilter === "popular" ? popular : trending;
 
