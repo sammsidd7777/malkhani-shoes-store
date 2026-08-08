@@ -83,7 +83,7 @@ const HeroSection = () => {
       return () => clearInterval(interval)
 
     });
-  },[])
+  },[]);
 
 
 
