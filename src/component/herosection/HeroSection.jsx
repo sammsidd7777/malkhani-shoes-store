@@ -62,28 +62,15 @@ const HeroSection = () => {
 
 
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCount((prev) => (prev + 1) % mainImg.length);
-  //     setNextCount((prev) => (prev + 1) % mainImg.length);
 
+ useEffect(() => {
+  const interval = setInterval(() => {
+    setCount((prev) => (prev + 1) % mainImg.length);
+    setNextCount((prev) => (prev + 1) % mainImg.length);
+  }, 3000);
 
-  //   return () => clearInterval(interval)
-  // }, []);
-
-
-  useEffect(() => {
-
-    const interval = setInterval(() => {
-
-   
-      setCount((prev) => (prev + 1) % mainImg.length),
-        setnextCount((prev) => (prev + 1) % mainImg.length);
-
-      return () => clearInterval(interval)
-
-    });
-  },[]);
+  return () => clearInterval(interval);
+}, []);
 
 
 
