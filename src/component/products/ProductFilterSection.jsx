@@ -7,9 +7,9 @@ import EmptyState from "../../components/ui/EmptyState";
 import { PackageSearch } from "lucide-react";
 
 const tabs = [
-  { key: "best", label: "Big Deals" },
-  { key: "discount", label: "Big Discount" },
-  { key: "new", label: "New Arrivals" },
+  { key: "bestSellers", label: "Best Sellers" },
+  { key: "popular", label: "Populart" },
+  { key: "trending", label: "Trending" },
 ];
 
 const ProductFilterSection = ({
@@ -20,10 +20,14 @@ const ProductFilterSection = ({
   handleAddToCart,
   loading = false,
 }) => {
-  const [activeFilter, setActiveFilter] = useState("best");
+  const [activeFilter, setActiveFilter] = useState("bestSellers");
 
-  const products =
-    activeFilter === "best" ? bestSellers : activeFilter === "discount" ? popular : trending;
+  console.log(  bestSellers,
+  popular,
+  trending,
+ )
+
+  const products = activeFilter === "bestSellers" ? bestSellers : activeFilter === "popular" ? popular : trending;
 
   return (
     <section className="py-16 sm:py-24 bg-ink-950">

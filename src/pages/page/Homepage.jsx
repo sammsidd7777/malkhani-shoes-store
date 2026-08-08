@@ -23,6 +23,7 @@ const Homepage = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
+      console.log(data,"dataHome")
       setBestSellers(data.message.bestSeller);
       setpopulart(data.message.popular);
       settrending(data.message.trending);
@@ -42,8 +43,8 @@ const Homepage = () => {
       <HeroSection />
       <ProductFilterSection
         bestSellers={bestSellers}
-        bigDiscount={bigDiscount}
-        newArrivals={newArrivals}
+        popular={popular}
+        trending={trending}
         loading={loading}
         handleAddToWish={handleAddToWish}
         handleAddToCart={handleAddToCart}
