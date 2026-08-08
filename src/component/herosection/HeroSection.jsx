@@ -304,7 +304,7 @@ const HeroSection = () => {
 
             {/* Main shoe — follows cursor slightly, floats, tilts */}
            <motion.img
-  key={count}
+  // key={count}
   style={{ x: shoeShiftX, y: shoeShiftY }}
   initial={{ opacity: 0 }}
   animate={{
