@@ -16,7 +16,7 @@ const Homepage = () => {
   const fatch = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${import.meta.env.VITE_BACK_URL}/products/all`);
+      const response = await fetch(`${import.meta.env.VITE_BACK_URL}/products/home`);
 
       console.log(response,"responce")
       if (!response.ok) {
