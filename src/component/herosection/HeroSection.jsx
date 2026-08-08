@@ -22,8 +22,8 @@ const particles = Array.from({ length: 14 }).map((_, i) => ({
 
 const HeroSection = () => {
 
-const [count,setCount]=useState(0);
-const [nextCount,setnextCount]=useState(1);
+  const [count, setCount] = useState(0);
+  const [nextCount, setnextCount] = useState(1);
 
   const stageRef = useRef(null);
 
@@ -51,25 +51,42 @@ const [nextCount,setnextCount]=useState(1);
 
 
   const mainImg = [
-  "/imagess/heroimg1.avif",
-  "/imagess/heroimg2.avif",
-  "/imagess/heroimg3.avif",
-  "/imagess/heroimg4.avif",
-  "/imagess/heroimg5.avif",
-  "/imagess/heroimg6.avif",
-  "/imagess/heroimg7.avif", 
+    "/imagess/heroimg1.avif",
+    "/imagess/heroimg2.avif",
+    "/imagess/heroimg3.avif",
+    "/imagess/heroimg4.avif",
+    "/imagess/heroimg5.avif",
+    "/imagess/heroimg6.avif",
+    "/imagess/heroimg7.avif",
   ];
 
 
 
-useEffect(() => {
-  const interval = setInterval(() => {
-    setCount((prev) => (prev + 1) % mainImg.length);
-    setNextCount((prev) => (prev + 1) % mainImg.length);
-   
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCount((prev) => (prev + 1) % mainImg.length);
+  //     setNextCount((prev) => (prev + 1) % mainImg.length);
 
-  return () => clearInterval(interval);
-}, []);
+
+  //   return () => clearInterval(interval)
+  // }, []);
+
+
+  useEffect(() => {
+
+    const interval = setInterval(() => {
+
+   
+      setCount((prev) => (prev + 1) % mainImg.length),
+        setnextCount((prev) => (prev + 1) % mainImg.length);
+
+      return () => clearInterval(interval)
+
+    });
+  },[])
+
+
+
 
   return (
     <section className="relative overflow-hidden bg-ink-950">
@@ -302,7 +319,7 @@ useEffect(() => {
               style={{ x: shoeShiftX, y: shoeShiftY }}
               animate={{ y: [0, -18, 0], rotate: [-3, 3, -3] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              src= {mainImg[nextCount]} alt="Featured sneaker"
+              src={mainImg[nextCount]} alt="Featured sneaker"
               className="relative w-full h-full object-contain drop-shadow-[0_40px_60px_rgba(0,0,0,0.65)]"
             />
 
