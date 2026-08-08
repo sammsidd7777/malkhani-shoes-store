@@ -23,7 +23,6 @@ const particles = Array.from({ length: 14 }).map((_, i) => ({
 const HeroSection = () => {
 
   const [count, setCount] = useState(0);
-  const [nextCount, setnextCount] = useState(1);
 
   const stageRef = useRef(null);
 
@@ -63,14 +62,16 @@ const HeroSection = () => {
 
 
 
- useEffect(() => {
+
+useEffect(() => {
   const interval = setInterval(() => {
     setCount((prev) => (prev + 1) % mainImg.length);
-    setNextCount((prev) => (prev + 1) % mainImg.length);
   }, 3000);
 
   return () => clearInterval(interval);
 }, []);
+
+const nextCount = (count + 1) % mainImg.length;
 
 
 
@@ -302,13 +303,24 @@ const HeroSection = () => {
             />
 
             {/* Main shoe — follows cursor slightly, floats, tilts */}
-            <motion.img
-              style={{ x: shoeShiftX, y: shoeShiftY }}
-              animate={{ y: [0, -18, 0], rotate: [-3, 3, -3] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              src={mainImg[nextCount]} alt="Featured sneaker"
-              className="relative w-full h-full object-contain drop-shadow-[0_40px_60px_rgba(0,0,0,0.65)]"
-            />
+           <motion.img
+  key={count}
+  style={{ x: shoeShiftX, y: shoeShiftY }}
+  initial={{ opacity: 0 }}
+  animate={{
+    opacity: 1,
+    y: [0, -18, 0],
+    rotate: [-3, 3, -3],
+  }}
+  transition={{
+    opacity: { duration: 0.5 },
+    y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+    rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+  }}
+  src={mainImg[nextCount]}
+  alt="Featured sneaker"
+  className="relative w-full h-full object-contain drop-shadow-[0_40px_60px_rgba(0,0,0,0.65)]"
+/>
 
             {/* Floating glass card — rating */}
             <motion.div
