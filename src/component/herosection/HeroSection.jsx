@@ -22,7 +22,7 @@ const particles = Array.from({ length: 14 }).map((_, i) => ({
 
 const HeroSection = () => {
 
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   const stageRef = useRef(null);
 
@@ -63,15 +63,15 @@ const HeroSection = () => {
 
 
 
-useEffect(() => {
-  const interval = setInterval(() => {
-    setCount((prev) => (prev + 1) % mainImg.length);
-  }, 3000);
+// useEffect(() => {
+//   const interval = setInterval(() => {
+//     setCount((prev) => (prev + 1) % mainImg.length);
+//   }, 3000);
 
-  return () => clearInterval(interval);
-}, []);
+//   return () => clearInterval(interval);
+// }, []);
 
-const nextCount = (count + 1) % mainImg.length;
+// const nextCount = (count + 1) % mainImg.length;
 
 
 
@@ -297,13 +297,14 @@ const nextCount = (count + 1) % mainImg.length;
                 x: { duration: 0.8, delay: 0.3 },
                 y: { duration: 7, repeat: Infinity, ease: "easeInOut" },
               }}
-              src={mainImg[count]}
+              src={mainImg[0]}
               alt=""
               className="absolute -right-6 bottom-2 w-1/2 object-contain drop-shadow-2xl blur-[1px] saturate-50"
             />
 
             {/* Main shoe — follows cursor slightly, floats, tilts */}
            <motion.img
+  key={count}
   style={{ x: shoeShiftX, y: shoeShiftY }}
   initial={{ opacity: 0 }}
   animate={{
@@ -316,7 +317,7 @@ const nextCount = (count + 1) % mainImg.length;
     y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
     rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" },
   }}
-  src={mainImg[nextCount]}
+  src={mainImg[2]}
   alt="Featured sneaker"
   className="relative w-full h-full object-contain drop-shadow-[0_40px_60px_rgba(0,0,0,0.65)]"
 />
