@@ -5,7 +5,7 @@ const brands = [
   "/imagesss/pumalogos.png",
   "/imagesss/adidaslogo.png",
   "/imagesss/jordanlogo.png",
-  "/imagesss/gucci.jpg",
+  "/imagesss/guccilogo.png",
 ];
 
 const BrandsSection = () => {
